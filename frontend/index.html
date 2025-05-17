@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart HR Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🤖 Smart HR Assistant</h1>
+      <p>Ask intelligent HR questions powered by AI</p>
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div class="query-box">
+      <select id="departmentDropdown">
+        <option value="">-- Select Department --</option>
+        <option value="Sales">Sales</option>
+        <option value="Human Resources">Human Resources</option>
+        <option value="Research & Development">Research & Development</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Technical">Technical</option>
+      </select>
+
+      <label for="satisfactionSlider">Job Satisfaction:</label>
+      <input type="range" min="1" max="4" value="1" class="slider" id="satisfactionSlider">
+      <span id="satisfactionValue">1</span>
+
+      <textarea id="questionInput" placeholder="e.g. List employees at risk of leaving..."></textarea>
+      <button onclick="askQuestion()">Ask</button>
+    </div>
+
+    <div class="response-box" id="responseBox"></div>
+
+    <!-- HR Analytics Section -->
+<h2>📊 HR Analytics</h2>
+<div class="chart-container">
+  <canvas id="attritionChart"></canvas>
+</div>
+<div class="chart-container">
+  <canvas id="departmentChart"></canvas>
+</div>
+    <div class="analytics-box">
+      <h3>Employee Attrition</h3>
+      <p>Percentage of employees at risk of leaving: <span id="attritionPercentage">0%</span></p>
+      <h3>Department Distribution</h3>
+      <p>Distribution of employees across departments:</p>
+      <ul id="departmentList"></ul>
+    </div>
+<!-- Attrition Chart -->
+<canvas id="attritionChart" width="400" height="200"></canvas>
+<div class="legend">
+  <span><span class="legend-box" style="background-color: #ff6666;"></span> At Risk</span>
+  <span><span class="legend-box" style="background-color: #66cc99;"></span> Not at Risk</span>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

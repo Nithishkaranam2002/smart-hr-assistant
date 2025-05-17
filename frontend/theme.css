@@ -1,0 +1,86 @@
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --card-bg: #fff;
+  --btn-bg: #4a90e2;
+  --btn-hover: #357ab8;
+  --response-bg: #f9f9f9;
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ddd;
+  --card-bg: #2c2c2c;
+  --btn-bg: #007acc;
+  --btn-hover: #005999;
+  --response-bg: #292929;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+main.card, .response-box, textarea, select, input, button {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--btn-bg);
+}
+button:hover {
+  background-color: var(--btn-hover);
+}
+.response-box {
+  background: var(--response-bg);
+}
+
+/* Toggle Switch */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
